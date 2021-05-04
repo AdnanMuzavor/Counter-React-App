@@ -1,13 +1,13 @@
 
 import React, { Component } from "react";
-
+import Itemfromlist from "./itemfromlist";
 class Itemlist extends Component {
   state = { items: [], text: "" };
   render() {
     return (
       <>
         <h3>TODO</h3>
-        <todolist items={this.state.items} />
+        <Itemfromlist items={this.state.items} />
         <form onSubmit={this.handle_submit}>
           <label htmlFor="new-todo">What needs to be done?</label>
           <input
@@ -15,7 +15,7 @@ class Itemlist extends Component {
             onChange={this.handle_value}
             value={this.state.text}
           />
-          <button>Add_#{this.state.item.length}</button>
+          <button>Add_#{this.state.items.length}</button>
         </form>
       </>
     );
