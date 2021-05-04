@@ -1,5 +1,7 @@
-import React from "react";
-class itemlist extends Component {
+
+import React, { Component } from "react";
+
+class Itemlist extends Component {
   state = { items: [], text: "" };
   render() {
     return (
@@ -19,11 +21,12 @@ class itemlist extends Component {
     );
   }
 
-  handle_value = () => {
+  handle_value = (e) => {
+      
     this.setState({ text: e.target.value });
   };
   handle_submit = (e) => {
-    e.preventDefault();
+   e.preventDefault();
     if (this.state.text.length === 0) {
       return;
     }
@@ -38,4 +41,4 @@ class itemlist extends Component {
   };
 }
 
-export default itemlist;
+export default Itemlist;

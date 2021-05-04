@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import NavBar from "./components/navbar";
 import Counters from "./components/counters";
+import Itemlist from "./components/itemlist";
 import "./App.css";
 
 class App extends Component {
@@ -57,6 +58,7 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
+        <Itemlist/>
         <NavBar totalCounters={this.state.counters.filter(c => c.value>0).length}/>
         <main className="container">
           <Counters
@@ -67,6 +69,8 @@ class App extends Component {
             onDelete={this.handledelete}
           />
         </main>
+        <hr></hr>
+       
       </React.Fragment>
     );
   }
